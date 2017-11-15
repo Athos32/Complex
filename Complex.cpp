@@ -67,3 +67,67 @@ void Complex::Stampa (int formato)
 		cout << " Numero non valido" << endl;
 
 }
+
+void Complex::Somma (Complex *A, Complex *B)
+{
+
+	if (Valido == true)
+	{
+		re = A -> re + B -> re;
+		im = A -> im + B -> im;
+		Valido = true;
+	}
+
+	else
+
+		Valido = false;
+
+}
+
+void Complex::Differenza (Complex *A, Complex *B)
+{
+
+	if (Valido == true)
+	{
+		re = A -> re - B -> re;
+		im = A -> im - B -> im;
+		Valido = true;
+	}
+
+	else
+
+		Valido = false;
+
+}
+
+void Complex::Prodotto (Complex *A, Complex *B)
+{
+
+	if (Valido == true)
+	{
+		re = A -> re * B -> re - A -> im * B -> im;
+		im = A -> im * B -> re - A -> re * B -> im;
+		Valido = true;
+	}
+
+	else
+
+		Valido = false;
+
+}
+
+void Complex::Quoziente (Complex *A, Complex *B)
+{
+
+	if (Valido == true)
+	{
+		re = (((A -> re * B -> re) + (A -> im * B -> im)) / ((B -> re * B -> re) + (B -> im * B -> im)));
+		im = (((A -> im * B -> re) - (A -> re * B -> im)) / ((B -> re * B -> re) + (B -> im * B -> im)));
+		Valido = true;
+	}
+
+	else
+
+		Valido = false;
+
+}
